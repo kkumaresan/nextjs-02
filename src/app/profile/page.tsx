@@ -13,7 +13,7 @@ export default function ProfilePage() {
   const getUserData = async () => {
     const user = await axios("/api/users/me");
     console.log(user)
-    setuserData(user.data.data._id);
+    setuserData(user.data.data);
   };
 
   const logout = async () => {
@@ -40,7 +40,7 @@ export default function ProfilePage() {
       >
         Get Data
       </button>
-      <code className="text-white">{userData}</code>
+      <code className="text-white">{JSON.stringify(userData)}</code>
     </div>
   );
 }
